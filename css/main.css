@@ -1,0 +1,258 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    --sans-serif: 'Inter', 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
+    --clr-white: #F5F5F5;
+    --clr-t1: #0087FF;
+    --clr-t2: #FF9F0A;
+    --clr-t3: #DA2632;
+    --clr-bg1: #2C2C2E;
+    --clr-bg2: #3A3A3C;
+    --clr-subtitle: #EBEBF5;
+    --clr-separator: #545458;
+}
+
+body {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 4vh 2.25vw;
+}
+
+.nav {
+    display: flex;
+    position: sticky;
+    top: 4vh;
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    font-weight: normal;
+    color: dimgray;
+    list-style: none;
+    gap: 1rem;
+}
+
+.nav a {
+    color: dimgray;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav a:hover {
+    font-weight: bold;
+}
+
+.bgtext {
+    position: fixed;
+    font-family: 'Neihu One', var(--sans-serif);
+    font-size: 15vw;
+    padding-left: 325px;
+    left: 0;
+    bottom: 0;
+    color: transparent;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+    z-index: -1;
+}
+
+.wordmark {
+    position: fixed;
+    right: 2.25vw;
+    bottom: 4vh;
+    width: 20%;
+}
+
+input[type="text"],
+input[type="text"]:focus,
+input[type="text"]:active,
+textarea[cols="27"],
+textarea[cols="27"]:focus,
+textarea[cols="27"]:active {
+    font-family: var(--sans-serif);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.015rem;
+    color: #EBEBF599;
+    background-color: transparent;
+    border: 1px solid transparent;
+    margin: 2px;
+    outline: none;
+}
+
+input[duration="true"],
+input[duration="true"]:focus,
+input[duration="true"]:active {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--clr-subtitle);
+    opacity: .6;
+    letter-spacing: -0.015rem;
+}
+
+input[type="text"]:focus::placeholder,
+input[type="text"]:active::placeholder,
+textarea:focus::placeholder,
+textarea:active::placeholder,
+input[duration="true"]:focus,
+input[duration="true"]:active {
+    color: lightcoral;
+    opacity: 1;
+    transition: color .3s ease-in-out;
+}
+
+input[avatar="true"],
+input[avatar="true"]:focus,
+input[avatar="true"]:active,
+input[avatar="true"]::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--clr-white);
+    opacity: 1;
+    letter-spacing: -0.0255px;
+}
+
+textarea[cols="27"],
+textarea[cols="27"]:focus,
+textarea[cols="27"]:active {
+    margin-top: -0.34rem;
+    letter-spacing: -0.015rem;
+    resize: none;
+}
+
+#Meeting-Month {
+    color: var(--clr-white);
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    background-color: black;
+    border-left: 2px solid black;
+    padding-right: 1px;
+    float: right;
+}
+
+#Meeting-Theme {
+    color: var(--clr-white);
+    font-size: 36px;
+    font-family: Georgia, serif;
+    text-align: center;
+    background-color: transparent;
+    width: 99%;
+    resize: none;
+    border: none;
+    outline: none;
+}
+
+.remove {
+    background-color: transparent;
+    color: var(--clr-white);
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 2px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color .3s ease-in-out;
+    visibility: hidden;
+}
+
+.remove::before {
+    content: 'remove speaker';
+    font-size: 16px;
+    white-space: nowrap;
+    opacity: 0;
+    background: #3A3A3CCD;
+    border: 1px solid var(--clr-t3);
+    border-radius: 5px;
+    padding: 0.2rem 0.5rem;
+    position: absolute;
+    right: 0.4rem;
+    top: 1.75rem;
+    transition: opacity .3s ease-in-out;
+}
+
+.remove:hover,
+.remove:hover::before {
+    color: var(--clr-t3);
+    opacity: 1;
+}
+
+foreignObject img {
+    width: 50px;
+    clip-path: circle();
+}
+
+.Instruction {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    width: 50vw;
+    height: 100vh;
+    top: 4vh;
+    color: dimgrey;
+    justify-content: center;
+    align-items: center;
+}
+
+.Instruction button,
+select {
+    color: gray;
+    font-family: monospace;
+    background: transparent;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: .25rem .5rem;
+    margin: .5rem .25rem;
+}
+
+select {
+    box-shadow: inset 2px 2px 3px #BABECC, inset -5px -5px 8px #FFF;
+}
+
+select:focus {
+    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+
+.Instruction button {
+    font-weight: bold;
+    box-shadow: -3px -3px 4px #FFF, 3px 3px 4px #BABECC;
+}
+
+.Instruction button:hover,
+.Instruction button:focus {
+    box-shadow: -2px -2px 8px #FFF, 2px 2px 8px #BABECC;
+}
+
+.Instruction button:active {
+    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+
+.Instruction li {
+    font-family: var(--sans-serif);
+    font-size: 1rem;
+    line-height: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        padding: 0;
+        background-color: black;
+    }
+
+    .Instruction,
+    aside {
+        display: none;
+    }
+
+    svg {
+        width: 100vw;
+    }
+}
